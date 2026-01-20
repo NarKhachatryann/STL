@@ -1,11 +1,13 @@
-#include <vector>
-#include <list>
 #include <string>
+#include <functional>
+#include "vector/vector.hpp"
+#include "list/list.hpp"
+#include "pair/pair.hpp"
 
 class HashTable {
 private:
     static const size_t TABLE_SIZE = 101;
-    std::vector<std::list<std::pair<std::string, int>>> table;
+    vector<list<pair<std::string, int>>> table;
 
     size_t hashFunction(const std::string& key) const {
         size_t hash = 0;
@@ -26,7 +28,7 @@ public:
                 return;
             }
         }
-        table[index].emplace_back(key, value);
+        table[index].push_back(pair<std::string,int>(key, value));
     }
 
     bool find(const std::string& key, int& value) const {
@@ -43,8 +45,8 @@ public:
     void remove(const std::string& key) {
         size_t index = hashFunction(key);
         auto& cell = table[index];
-        cell.remove_if([&key](const std::pair<std::string, int>& pair) {
-            return pair.first == key;
+        cell.remove_if([&key](const pair<std::string,int>& p) {
+            return p.first == key;
         });
     }
 
