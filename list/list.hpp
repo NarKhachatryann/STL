@@ -204,9 +204,12 @@ public:
 };
 
 void delete_odd(mylist::list<int>& lst) {
-    for(auto it : lst) {
-        if(it % 2 != 0) {
-            // lst.erase(it); // Erase method is not implemented
+    auto it = lst.begin();
+    while (it != lst.end()) {
+        if (*it % 2 != 0) {
+            it = lst.erase(it);
+        } else {
+            ++it;
         }
     }
 }

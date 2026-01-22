@@ -6,6 +6,7 @@ int main() {
     lst.push_back(10);
     lst.push_back(20);
     lst.push_back(30);
+    lst.push_back(41);
 
     std::cout << "List contents: ";
     lst.print();
