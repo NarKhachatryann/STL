@@ -1,0 +1,46 @@
+# Build folders
+/build/
+/CMakeFiles/
+/out/
+/bin/
+/obj/
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles
+cmake_install.cmake
+*.cmake
+
+# Compiled object files
+*.o
+*.obj
+*.lo
+*.la
+*.al
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Static libraries
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Debug files
+*.dSYM/
+*.stackdump
+
+# Logs
+*.log
+
+# Editor/IDE specific
+.vscode/
+.idea/
+*.swp
+*~
